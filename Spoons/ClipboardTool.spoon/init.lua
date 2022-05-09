@@ -28,7 +28,7 @@ obj.frequency = 0.8
 --- ClipboardTool.hist_size
 --- Variable
 --- How many items to keep on history. Defaults to 100
-obj.hist_size = 100
+obj.hist_size = 10
 
 --- ClipboardTool.max_entry_size
 --- Variable
@@ -43,7 +43,7 @@ obj.max_size = getSetting('max_size', false)
 --- ClipboardTool.show_copied_alert
 --- Variable
 --- If `true`, show an alert when a new item is added to the history, i.e. has been copied.
-obj.show_copied_alert = true
+obj.show_copied_alert = false
 
 --- ClipboardTool.honor_ignoredidentifiers
 --- Variable
@@ -53,7 +53,7 @@ obj.honor_ignoredidentifiers = true
 --- ClipboardTool.paste_on_select
 --- Variable
 --- Whether to auto-type the item when selecting it from the menu. Can be toggled on the fly from the chooser. Defaults to `false`.
-obj.paste_on_select = getSetting('paste_on_select', false)
+obj.paste_on_select = getSetting('paste_on_select', true)
 
 --- ClipboardTool.logger
 --- Variable
@@ -306,16 +306,16 @@ function obj:_populateChooser()
                                action = 'clear',
                                image = hs.image.imageFromName('NSTrashFull') })
    end
-   table.insert(menuData, {
-                   text="《" .. (self.paste_on_select and "Disable" or "Enable") .. " Paste-on-select》",
-                   action = 'toggle_paste_on_select',
-                   image = (self.paste_on_select and hs.image.imageFromName('NSSwitchEnabledOn') or hs.image.imageFromName('NSSwitchEnabledOff'))
-   })
-   table.insert(menuData, {
-                   text="《" .. (self.max_size and "Disable" or "Enable") .. " max size " .. self.max_entry_size .. "》",
-                   action = 'toggle_max_size',
-                   image = (self.max_size and hs.image.imageFromName('NSSwitchEnabledOn') or hs.image.imageFromName('NSSwitchEnabledOff'))
-   })
+   -- table.insert(menuData, {
+   --                 text="《" .. (self.paste_on_select and "Disable" or "Enable") .. " Paste-on-select》",
+   --                 action = 'toggle_paste_on_select',
+   --                 image = (self.paste_on_select and hs.image.imageFromName('NSSwitchEnabledOn') or hs.image.imageFromName('NSSwitchEnabledOff'))
+   -- })
+   -- table.insert(menuData, {
+   --                 text="《" .. (self.max_size and "Disable" or "Enable") .. " max size " .. self.max_entry_size .. "》",
+   --                 action = 'toggle_max_size',
+   --                 image = (self.max_size and hs.image.imageFromName('NSSwitchEnabledOn') or hs.image.imageFromName('NSSwitchEnabledOff'))
+   -- })
    self.logger.df("Returning menuData = %s", hs.inspect(menuData))
    return menuData
 end
