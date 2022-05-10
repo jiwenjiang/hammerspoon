@@ -5,3 +5,6 @@ hs.loadSpoon("ClipboardTool"):start()
 spoon.ClipboardTool:bindHotkeys({
     toggle_clipboard = { hyper, "v" }
 })
+
+-- winwin
+hs.loadSpoon("WinWin")
