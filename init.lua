@@ -17,8 +17,8 @@ spoon.WindowHalfsAndThirds:bindHotkeys({
     bottom_right = { { "ctrl", "cmd" }, "4" },
     max_toggle   = { { "ctrl", "cmd", }, "m" },
     max          = { { "ctrl", "alt", "cmd" }, "Up" },
-    undo         = { { "alt", "cmd" }, "z" },
-    center       = { { "alt", "cmd" }, "c" },
+    undo         = { { "ctrl", "cmd" }, "z" },
+    center       = { { "ctrl", "cmd" }, "c" },
     larger       = { { "alt", "cmd", "shift" }, "Right" },
     smaller      = { { "alt", "cmd", "shift" }, "Left" },
 })
